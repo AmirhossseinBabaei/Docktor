@@ -22,7 +22,7 @@ return new class extends Migration
             $table->text('description')->nullable(); // توضیح مراجعه
             $table->text('cancellation_reason')->nullable(); // دلیل لغو
             $table->string('tracking_code')->unique(); // کد رهگیری
-            $table->boolean('is_emergency')->default(false); // اورژانسی؟
+            $table->boolean('is_emergency')->default(false);
             $table->timestamps();
 
             $table->index(['doctor_id', 'date', 'status']);
