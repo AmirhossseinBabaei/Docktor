@@ -21,7 +21,7 @@ return new class extends Migration
             $table->enum('status', ['pending', 'confirmed', 'completed', 'cancelled', 'no_show'])->default('pending');
             $table->text('description')->nullable(); // توضیح مراجعه
             $table->text('cancellation_reason')->nullable(); // دلیل لغو
-            $table->string('tracking_code')->unique(); // کد رهگیری
+            $table->string('tracking_code')->unique(); //  رهگیری
             $table->boolean('is_emergency')->default(false);
             $table->timestamps();
 
