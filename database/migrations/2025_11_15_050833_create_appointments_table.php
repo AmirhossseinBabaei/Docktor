@@ -19,7 +19,7 @@ return new class extends Migration
             $table->time('start_time');
             $table->time('end_time');
             $table->enum('status', ['pending', 'confirmed', 'completed', 'cancelled', 'no_show'])->default('pending');
-            $table->text('description')->nullable(); // توضیح مراجعه
+            $table->text('description')->nullable(); // توضیح
             $table->text('cancellation_reason')->nullable(); // دلیل لغو
             $table->string('tracking_code')->unique(); //  رهگیری
             $table->boolean('is_emergency')->default(false);
