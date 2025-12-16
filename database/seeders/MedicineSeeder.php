@@ -27,3 +27,4 @@ class MedicineSeeder extends Seeder
         DB::table('medicines')->insert($items);
     }
 }
+

@@ -26,3 +26,4 @@ class CacheSeeder extends Seeder
         DB::table('cache_locks')->truncate();
     }
 }
+

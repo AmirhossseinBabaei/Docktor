@@ -51,3 +51,4 @@ class JobSeeder extends Seeder
         ]);
     }
 }
+

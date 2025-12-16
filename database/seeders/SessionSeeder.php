@@ -29,3 +29,4 @@ class SessionSeeder extends Seeder
         ]);
     }
 }
+

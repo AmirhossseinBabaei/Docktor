@@ -48,3 +48,4 @@ class VisitSeeder extends Seeder
         }
     }
 }
+

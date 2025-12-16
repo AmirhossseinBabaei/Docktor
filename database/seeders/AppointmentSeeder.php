@@ -51,3 +51,4 @@ class AppointmentSeeder extends Seeder
         DB::table('appointments')->insert($rows);
     }
 }
+

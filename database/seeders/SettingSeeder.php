@@ -28,3 +28,4 @@ class SettingSeeder extends Seeder
         DB::table('settings')->insert($settings);
     }
 }
+

@@ -89,3 +89,4 @@ class UserSeeder extends Seeder
         User::factory()->count(25)->create();
     }
 }
+

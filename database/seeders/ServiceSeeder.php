@@ -28,3 +28,4 @@ class ServiceSeeder extends Seeder
         DB::table('services')->insert($services);
     }
 }
+

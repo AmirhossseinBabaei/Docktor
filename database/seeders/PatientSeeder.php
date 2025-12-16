@@ -37,3 +37,4 @@ class PatientSeeder extends Seeder
         DB::table('patients')->insert($patients);
     }
 }
+

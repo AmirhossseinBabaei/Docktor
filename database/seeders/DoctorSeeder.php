@@ -43,3 +43,4 @@ class DoctorSeeder extends Seeder
         DB::table('doctors')->insert($doctors);
     }
 }
+

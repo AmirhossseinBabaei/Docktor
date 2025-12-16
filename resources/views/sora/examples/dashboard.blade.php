@@ -1,4 +1,4 @@
-﻿<!-- 
+﻿<!--
 =========================================================
  Light Bootstrap Dashboard - v2.0.1
 =========================================================
@@ -46,7 +46,7 @@
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="#" class="simple-text">
-                        سورا
+                       سیستم مدیریت مطب سورا
                     </a>
                 </div>
                 <ul class="nav">
@@ -65,41 +65,47 @@
                     <li>
                         <a class="nav-link" href="./table.html">
                             <i class="nc-icon nc-notes"></i>
-                            <p>جداول</p>
+                            <p>آمار</p>
                         </a>
                     </li>
                     <li>
                         <a class="nav-link" href="./form.html">
                             <i class="nc-icon nc-credit-card"></i>
-                            <p>فرم</p>
+                            <p>پزشکان</p>
                         </a>
                     </li>
                     <li>
                         <a class="nav-link" href="./typography.html">
                             <i class="nc-icon nc-paper-2"></i>
-                            <p>تایپوگرافی</p>
+                            <p>بیماران</p>
                         </a>
                     </li>
                     <li>
                         <a class="nav-link" href="./icons.html">
                             <i class="nc-icon nc-atom"></i>
-                            <p>آیکن ها</p>
+                            <p>دارو ها</p>
                         </a>
                     </li>
                     <li>
                         <a class="nav-link" href="./maps.html">
                             <i class="nc-icon nc-pin-3"></i>
-                            <p>نقشه</p>
+                            <p>تنظیمات</p>
                         </a>
                     </li>
                     <li>
                         <a class="nav-link" href="./notifications.html">
                             <i class="nc-icon nc-bell-55"></i>
-                            <p>اعلانات</p>
+                            <p>سرویس ها</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./notifications.html">
+                            <i class="nc-icon nc-album-2"></i>
+                            <p>ویزیت ها</p>
                         </a>
                     </li>
                     <li class="nav-item active active-pro">
-                        <a class="nav-link active" href="#">
+                        <a class="nav-link active" href="{{ route('logout') }}">
                             <i class="fa fa-sign-out-alt"></i>
                             <p>خروج از سورا</p>
                         </a>
@@ -169,7 +175,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#pablo">
+                                <a class="nav-link" href="{{ route('logout')  }}">
                                     <span class="no-icon">خروج</span>
                                 </a>
                             </li>
@@ -184,19 +190,19 @@
                         <div class="col-md-4">
                             <div class="card ">
                                 <div class="card-header ">
-                                    <h4 class="card-title">آمار ایمیل</h4>
+                                    <h4 class="card-title">آمار ویزیت ها</h4>
                                     <p class="card-category">آخرین عملکرد کمپین</p>
                                 </div>
                                 <div class="card-body ">
                                     <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
                                     <div class="legend">
-                                        <i class="fa fa-circle text-info"></i> باز
-                                        <i class="fa fa-circle text-danger"></i> پرش
-                                        <i class="fa fa-circle text-warning"></i> لغو اشتراک
+                                        <i class="fa fa-circle text-info"></i> ویزیت شده
+                                        <i class="fa fa-circle text-danger"></i> منتظر
+                                        <i class="fa fa-circle text-warning"></i> لغو شده
                                     </div>
                                     <hr>
                                     <div class="stats">
-                                        <i class="fa fa-clock-o"></i> کمپین 2 روز پیش ارسال شد
+                                        <i class="fa fa-clock-o"></i>وضعیت کمپین هم اکنون
                                     </div>
                                 </div>
                             </div>
@@ -204,7 +210,7 @@
                         <div class="col-md-8">
                             <div class="card ">
                                 <div class="card-header ">
-                                    <h4 class="card-title">رفتار کاربران</h4>
+                                    <h4 class="card-title">آمار ویزیت ها</h4>
                                     <p class="card-category">عملکرد 24 ساعته</p>
                                 </div>
                                 <div class="card-body ">
@@ -212,9 +218,9 @@
                                 </div>
                                 <div class="card-footer ">
                                     <div class="legend">
-                                        <i class="fa fa-circle text-info"></i> باز
-                                        <i class="fa fa-circle text-danger"></i> کلیک
-                                        <i class="fa fa-circle text-warning"></i> کلیک بار دوم
+                                        <i class="fa fa-circle text-info"></i> ویزیت شده
+                                        <i class="fa fa-circle text-danger"></i> منتظر
+                                        <i class="fa fa-circle text-warning"></i>لغو شده
                                     </div>
                                     <hr>
                                     <div class="stats">
@@ -228,16 +234,16 @@
                         <div class="col-md-6">
                             <div class="card ">
                                 <div class="card-header ">
-                                    <h4 class="card-title">فروش 1402</h4>
-                                    <p class="card-category">همه محصولات از جمله مالیات</p>
+                                    <h4 class="card-title">پر بازدید ترین ماه ها</h4>
+                                    <p class="card-category">کل ماه های سال</p>
                                 </div>
                                 <div class="card-body ">
                                     <div id="chartActivity" class="ct-chart"></div>
                                 </div>
                                 <div class="card-footer ">
                                     <div class="legend">
-                                        <i class="fa fa-circle text-info"></i> تسلا مدل اس
-                                        <i class="fa fa-circle text-danger"></i> BMW سری 5
+                                        <i class="fa fa-circle text-info"></i> نیمه اول
+                                        <i class="fa fa-circle text-danger"></i> نیمه دوم
                                     </div>
                                     <hr>
                                     <div class="stats">
@@ -249,8 +255,8 @@
                         <div class="col-md-6">
                             <div class="card  card-tasks">
                                 <div class="card-header ">
-                                    <h4 class="card-title">کارها</h4>
-                                    <p class="card-category">توسعه بک اند</p>
+                                    <h4 class="card-title">نسخه ها</h4>
+                                    <p class="card-category">آمار ریل تایم</p>
                                 </div>
                                 <div class="card-body ">
                                     <div class="table-full-width">
@@ -266,16 +272,15 @@
                                                             </label>
                                                         </div>
                                                     </td>
-                                                    <td>امضای قرارداد برای "سازمان دهندگان کنفرانس از چه می ترسند؟"
+                                                    <td>حسن رضایی
                                                     </td>
                                                     <td class="td-actions text-right">
                                                         <button type="button" rel="tooltip" title="Edit Task"
                                                             class="btn btn-info btn-simple btn-link">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <button type="button" rel="tooltip" title="Remove"
-                                                            class="btn btn-danger btn-simple btn-link">
-                                                            <i class="fa fa-times"></i>
+                                                            <button type="button" rel="tooltip"
+                                                                    class="btn btn-warning">
+                                                                وضعیت: منتظر نوبت
+                                                            </button>
                                                         </button>
                                                     </td>
                                                 </tr>
@@ -289,16 +294,15 @@
                                                             </label>
                                                         </div>
                                                     </td>
-                                                    <td>خطوطی از ادبیات بزرگ روسیه؟ یا ایمیل از رئیس من؟
+                                                    <td>مصطفی محمدی
                                                     </td>
                                                     <td class="td-actions text-right">
                                                         <button type="button" rel="tooltip" title="Edit Task"
                                                             class="btn btn-info btn-simple btn-link">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <button type="button" rel="tooltip" title="Remove"
-                                                            class="btn btn-danger btn-simple btn-link">
-                                                            <i class="fa fa-times"></i>
+                                                            <button type="button" rel="tooltip"
+                                                                    class="btn btn-warning">
+                                                                وضعیت: منتظر نوبت
+                                                            </button>
                                                         </button>
                                                     </td>
                                                 </tr>
@@ -312,17 +316,16 @@
                                                             </label>
                                                         </div>
                                                     </td>
-                                                    <td>سیل: یک سال بعد، ارزیابی موارد گم شده و یافت شده در اثر باران
-                                                        مهیب مترو دیترویت
+                                                    <td>
+                                                        جعفر رضایی
                                                     </td>
                                                     <td class="td-actions text-right">
                                                         <button type="button" rel="tooltip" title="Edit Task"
                                                             class="btn btn-info btn-simple btn-link">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <button type="button" rel="tooltip" title="Remove"
-                                                            class="btn btn-danger btn-simple btn-link">
-                                                            <i class="fa fa-times"></i>
+                                                            <button type="button" rel="tooltip"
+                                                                    class="btn btn-warning">
+                                                                وضعیت: منتظر نوبت
+                                                            </button>
                                                         </button>
                                                     </td>
                                                 </tr>
@@ -335,16 +338,15 @@
                                                             </label>
                                                         </div>
                                                     </td>
-                                                    <td>4 تجربه کاربری نامرئی ایجاد کنید که هرگز درباره آنها نمی دانستید
+                                                    <td>نوشابه عین اللهی
                                                     </td>
                                                     <td class="td-actions text-right">
                                                         <button type="button" rel="tooltip" title="Edit Task"
                                                             class="btn btn-info btn-simple btn-link">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <button type="button" rel="tooltip" title="Remove"
-                                                            class="btn btn-danger btn-simple btn-link">
-                                                            <i class="fa fa-times"></i>
+                                                            <button type="button" rel="tooltip"
+                                                                    class="btn btn-warning">
+                                                                وضعیت: منتظر نوبت
+                                                            </button>
                                                         </button>
                                                     </td>
                                                 </tr>
@@ -358,38 +360,22 @@
                                                             </label>
                                                         </div>
                                                     </td>
-                                                    <td>"دنبال کردن رسانه را بهتر می کند" را بخوانید</td>
+                                                    <td>رضا محمدی</td>
                                                     <td class="td-actions text-right">
                                                         <button type="button" rel="tooltip" title="Edit Task"
                                                             class="btn btn-info btn-simple btn-link">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <button type="button" rel="tooltip" title="Remove"
-                                                            class="btn btn-danger btn-simple btn-link">
-                                                            <i class="fa fa-times"></i>
+                                                            <button type="button" rel="tooltip"
+                                                                    class="btn btn-warning">
+                                                                وضعیت: منتظر نوبت
+                                                            </button>
                                                         </button>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
                                                         <div class="form-check">
-                                                            <label class="form-check-label">
-                                                                <input class="form-check-input" type="checkbox" value=""
-                                                                    disabled>
-                                                                <span class="form-check-sign"></span>
-                                                            </label>
+
                                                         </div>
-                                                    </td>
-                                                    <td>5 دشمن را از توییتر آنفالو کنید</td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" title="Edit Task"
-                                                            class="btn btn-info btn-simple btn-link">
-                                                            <i class="fa fa-edit"></i>
-                                                        </button>
-                                                        <button type="button" rel="tooltip" title="Remove"
-                                                            class="btn btn-danger btn-simple btn-link">
-                                                            <i class="fa fa-times"></i>
-                                                        </button>
                                                     </td>
                                                 </tr>
                                             </tbody>
