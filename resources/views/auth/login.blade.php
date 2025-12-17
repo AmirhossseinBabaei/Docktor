@@ -208,8 +208,10 @@
                     </button>
                     <div class="text-center small text-muted my-2">یا</div>
                     <button type="button" class="btn btn-light btn-block border d-flex align-items-center justify-content-center" style="gap:.5rem;">
-                        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" style="width:18px;height:18px;">
-                        <span>ورود با حساب گوگل</span>
+                        <a href="{{ url('login-by-google') }}">
+                            <img src="{{ asset('sora/assets/img/github-mark.png') }}" alt="GitHub" style="width:18px;height:18px;">
+                            <span>ورود با حساب گیت هاب</span>
+                        </a>
                     </button>
                 </form>
             </div>

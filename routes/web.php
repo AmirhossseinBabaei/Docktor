@@ -6,7 +6,6 @@ use App\Http\Controllers\ChatController;
 Route::get('/', function () {
     return view('home');
 });
-//
 
 Route::get('/dashboard', function () {
     return view('sora.examples.dashboard');
@@ -21,6 +20,10 @@ Route::get('/book-appointment', function () {
 Route::get('/loginForm', [\App\Http\Controllers\AuthController::class, 'showLoginForm'])->name('login');
 
 Route::post('login', [\App\Http\Controllers\AuthController::class, 'login'])->name('loginMethod');
+
+Route::get('login-by-google', [\App\Http\Controllers\AuthController::class, 'googleLoginRedirect'])->name('google.login.redirect');
+
+Route::get('google-login', [\App\Http\Controllers\AuthController::class, 'googleLogin'])->name('google.login');
 
 Route::get('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 

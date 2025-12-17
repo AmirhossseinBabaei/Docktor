@@ -34,5 +34,9 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
-
+    'github' => [
+        'client_id' => 'Ov23liwSJ1TyaViQ55An',
+        'client_secret' => 'c7ed42088ed4fd11b6094905b7f4f462747f71da',
+        'redirect' => 'http://127.0.0.1:8000/google-login',
+    ],
 ];
