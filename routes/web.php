@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChatController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
@@ -17,15 +17,15 @@ Route::get('/book-appointment', function () {
 
 //Route::view('/sora', 'sora')->name('sora.demo');
 
-Route::get('/loginForm', [\App\Http\Controllers\AuthController::class, 'showLoginForm'])->name('login');
+Route::get('/loginForm', [\App\Http\Controllers\Auth\AuthController::class, 'showLoginForm'])->name('login');
 
-Route::post('login', [\App\Http\Controllers\AuthController::class, 'login'])->name('loginMethod');
+Route::post('login', [\App\Http\Controllers\Auth\AuthController::class, 'login'])->name('loginMethod');
 
-Route::get('login-by-google', [\App\Http\Controllers\AuthController::class, 'googleLoginRedirect'])->name('google.login.redirect');
+Route::get('login-by-google', [\App\Http\Controllers\Auth\AuthController::class, 'googleLoginRedirect'])->name('google.login.redirect');
 
-Route::get('google-login', [\App\Http\Controllers\AuthController::class, 'googleLogin'])->name('google.login');
+Route::get('google-login', [\App\Http\Controllers\Auth\AuthController::class, 'googleLogin'])->name('google.login');
 
-Route::get('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
+Route::get('/logout', [\App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('logout');
 
 Route::get('/hash', function (){
     return \Illuminate\Support\Facades\Hash::make('Laravel');
