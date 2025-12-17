@@ -39,9 +39,4 @@ Route::get('/hash', function (){
 //Route::view('/sora/examples/typography', 'sora.examples.typography')->name('sora.examples.typography');
 //Route::view('/sora/examples/user', 'sora.examples.user')->name('sora.examples.user');
 
-//Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
-//Route::post('/chat/send', [ChatController::class, 'send'])->name('chat.send');
-//Route::get('/chat/messages', [ChatController::class, 'messages'])->name('chat.messages');
-//Route::get('/chat/users', [ChatController::class, 'users'])->name('chat.users');
-
 Route::view('/home', 'home');
