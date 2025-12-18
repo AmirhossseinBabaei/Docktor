@@ -7,9 +7,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/dashboard', function () {
-    return view('sora.examples.dashboard');
-})->middleware('auth')->name('dashboard');
+Route::get('/dashboard', [\App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
 
 Route::get('/book-appointment', function () {
     return view('book-appointment');

@@ -3,11 +3,12 @@
 namespace App\Repositories;
 
 use App\Models\Appointment;
+use Carbon\Carbon;
 
 class AppointmentRepository extends BaseRepository
 {
-    protected string $setModel = Appointment::class;
-    protected string $table = "users";
+    public $setModel = Appointment::class;
+    public $table = "users";
 
     public function getPendingStatusAppointmentsCount(): int
     {
@@ -27,5 +28,15 @@ class AppointmentRepository extends BaseRepository
     public function getAppointmentsCount(): int
     {
         return $this->model()->count();
+    }
+
+    public function getTodayAppointmentByTime(string $startTime, string $finishTime)
+    {
+        return $this->model()
+            ->whereDate('date', Carbon::now()
+            ->format('Y-m-d'))
+            ->where('start_time', '<=', $startTime)
+            ->where('end_time', '>=',$finishTime)
+            ->count();
     }
 }

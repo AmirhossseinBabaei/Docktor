@@ -6,8 +6,8 @@ use Illuminate\Support\Facades\DB;
 
 abstract class BaseRepository
 {
-    protected string $setModel;
-    protected string $table;
+    public $setModel;
+    public $table;
 
     protected function query()
     {
@@ -16,6 +16,6 @@ abstract class BaseRepository
 
     protected function model()
     {
-        return get_class($this->setModel);
+        return app($this->setModel);
     }
 }
