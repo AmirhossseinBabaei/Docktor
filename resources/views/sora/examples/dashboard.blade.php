@@ -12,6 +12,7 @@
 =========================================================
 
  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.  -->
+{{--{{ dd($serviceData['data']) }}--}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -672,10 +673,10 @@
             // };
             var optionsSales = {
                 lineSmooth: false,
-                low: 3,
+                low: 5,
                 high: 100,
                 showArea: true,
-                height: "245px",
+                height: "300px",
                 axisX: {
                     showGrid: false,
                 },
@@ -701,34 +702,43 @@
 
             // lbd.startAnimationForLineChart(chartHours);
 
-            var data = {
+            let rawData = {!! json_encode($serviceData['data']['monthCountChartData']) !!};
+
+            let seriesData = [
+                rawData.march,
+                rawData.april,
+                rawData.may,
+                rawData.june,
+                rawData.july,
+                rawData.august,
+                rawData.september,
+                rawData.october,
+                rawData.november,
+                rawData.december,
+                rawData.january,
+                rawData.february
+            ];
+
+            let data = {
                 labels: ['فروردین', 'اردیبهشت' ,'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'],
-                series: [
-                    [320, 780, 553, 453, 326, 434, 568, 610, 756, 895],
-                    [280, 580, 453, 353, 300, 364, 368, 410, 636, 695]
-                ]
+                series: [seriesData]
             };
 
             var options = {
-                seriesBarDistance: 10,
-                axisX: {
-                    showGrid: false
+                seriesBarDistance: 100,
+                axisX: { showGrid: false },
+                axisY: {
+                    onlyInteger: true,
+                    offset: 10,
+                    low: 0,
+                    high: 100,
+                    scaleMinSpace: 10
                 },
                 height: "245px"
             };
 
-            var responsiveOptions = [
-                ['screen and (max-width: 640px)', {
-                    seriesBarDistance: 5,
-                    axisX: {
-                        labelInterpolationFnc: function(value) {
-                            return value[0];
-                        }
-                    }
-                }]
-            ];
+            var chartActivity = Chartist.Bar('#chartActivity', data, options);
 
-            var chartActivity = Chartist.Bar('#chartActivity', data, options, responsiveOptions);
 
             // lbd.startAnimationForBarChart(chartActivity);
 

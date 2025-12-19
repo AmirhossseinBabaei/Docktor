@@ -39,4 +39,13 @@ class AppointmentRepository extends BaseRepository
             ->where('end_time', '>=',$finishTime)
             ->count();
     }
+
+    public function getThisYearAppointmentsByMonth(int $month)
+    {
+        return $this->model()
+            ->whereYear('date', Carbon::now()
+            ->format('Y'))
+            ->whereMonth('date', $month)
+            ->count();
+    }
 }
