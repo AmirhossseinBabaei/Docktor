@@ -57,7 +57,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="nav-link" href="./user.html">
+                    <a class="nav-link" href="{{ route('profile') }}">
                         <i class="nc-icon nc-circle-09"></i>
                         <p>پروفایل</p>
                     </a>

@@ -6,6 +6,6 @@ use App\Models\User;
 
 class UsersRepository extends BaseRepository
 {
-    protected string $setModel = User::class;
-    protected string $table = "users";
+    public $setModel = User::class;
+    public $table = "users";
 }

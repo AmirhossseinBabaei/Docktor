@@ -45,17 +45,17 @@
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="#" class="simple-text">
-                        سورا
+                        سیستم مدیریت مطب سورا
                     </a>
                 </div>
                 <ul class="nav">
-                    <li>
-                        <a class="nav-link" href="dashboard.html">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('dashboard')  }}">
                             <i class="nc-icon nc-chart-pie-35"></i>
                             <p>داشبورد</p>
                         </a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="active">
                         <a class="nav-link" href="./user.html">
                             <i class="nc-icon nc-circle-09"></i>
                             <p>پروفایل</p>
@@ -64,41 +64,47 @@
                     <li>
                         <a class="nav-link" href="./table.html">
                             <i class="nc-icon nc-notes"></i>
-                            <p>جداول</p>
+                            <p>آمار</p>
                         </a>
                     </li>
                     <li>
                         <a class="nav-link" href="./form.html">
                             <i class="nc-icon nc-credit-card"></i>
-                            <p>فرم</p>
+                            <p>پزشکان</p>
                         </a>
                     </li>
                     <li>
                         <a class="nav-link" href="./typography.html">
                             <i class="nc-icon nc-paper-2"></i>
-                            <p>تایپوگرافی</p>
+                            <p>بیماران</p>
                         </a>
                     </li>
                     <li>
                         <a class="nav-link" href="./icons.html">
                             <i class="nc-icon nc-atom"></i>
-                            <p>آیکن ها</p>
+                            <p>دارو ها</p>
                         </a>
                     </li>
                     <li>
                         <a class="nav-link" href="./maps.html">
                             <i class="nc-icon nc-pin-3"></i>
-                            <p>نقشه</p>
+                            <p>تنظیمات</p>
                         </a>
                     </li>
                     <li>
                         <a class="nav-link" href="./notifications.html">
                             <i class="nc-icon nc-bell-55"></i>
-                            <p>اعلانات</p>
+                            <p>سرویس ها</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="./notifications.html">
+                            <i class="nc-icon nc-album-2"></i>
+                            <p>ویزیت ها</p>
                         </a>
                     </li>
                     <li class="nav-item active active-pro">
-                        <a class="nav-link active" href="#">
+                        <a class="nav-link active" href="{{ route('logout') }}">
                             <i class="fa fa-sign-out-alt"></i>
                             <p>خروج از سورا</p>
                         </a>
@@ -186,26 +192,20 @@
                                     <h4 class="card-title">ویرایش پروفایل</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form action="{{ route('profile.update') }}" method="POST">
+                                        @csrf
                                         <div class="row">
-                                            <div class="col-md-5 pl-1">
-                                                <div class="form-group">
-                                                    <label>شرکت (غیرفعال)</label>
-                                                    <input type="text" class="form-control" disabled=""
-                                                        placeholder="شرکت" value="پرشین تم">
-                                                </div>
-                                            </div>
                                             <div class="col-md-3 px-1">
                                                 <div class="form-group">
                                                     <label>نام کاربری</label>
-                                                    <input type="text" class="form-control" placeholder="نام کاربری"
-                                                        value="nima25">
+                                                    <input type="text" name="username" class="form-control" placeholder="نام کاربری"
+                                                        value="{{ $user->username ?? ''  }}">
                                                 </div>
                                             </div>
-                                            <div class="col-md-4 pr-1">
+                                            <div class="col-md-9 pr-1">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">آدرس ایمیل</label>
-                                                    <input type="email" class="form-control" placeholder="ایمیل">
+                                                    <input type="email" disabled value="{{ $user->email ?? '' }}" class="form-control" placeholder="ایمیل">
                                                 </div>
                                             </div>
                                         </div>
@@ -214,55 +214,23 @@
                                                 <div class="form-group">
                                                     <label>نام</label>
                                                     <input type="text" class="form-control" placeholder="نام"
-                                                        value="نیما">
+                                                        value="{{ $user->first_name ?? '' }}" name="first_name">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 pr-1">
                                                 <div class="form-group">
                                                     <label>نام خانوادگی</label>
                                                     <input type="text" class="form-control" placeholder="نام خانوادگی"
-                                                        value="شاهی">
+                                                        value="{{ $user->last_name ?? '' }}" name="last_name">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label>آدرس</label>
-                                                    <input type="text" class="form-control" placeholder="آدرس"
-                                                        value="ایران ، تهران ، کریم خان">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4 pl-1">
-                                                <div class="form-group">
-                                                    <label>شهر</label>
-                                                    <input type="text" class="form-control" placeholder="شهر"
-                                                        value="تهران">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 px-1">
-                                                <div class="form-group">
-                                                    <label>کشور</label>
-                                                    <input type="text" class="form-control" placeholder="کشور"
-                                                        value="ایران">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 pr-1">
-                                                <div class="form-group">
-                                                    <label>کد پستی</label>
-                                                    <input type="number" class="form-control" placeholder="کد پستی">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label>درباره مت</label>
-                                                    <textarea rows="4" cols="80" class="form-control"
-                                                        placeholder="اینجا می تواند توضیحات شما باشد"
-                                                        value="Mike">لامبورگینی مرسی، جوجه تو خیلی تشنه است، من در آن لامبو دو نفره هستم.</textarea>
+                                                    <label>شماره تلفن</label>
+                                                    <input type="number" class="form-control" placeholder="شماره تلفن"
+                                                        value="{{ $user->phone  }}" name="phone">
                                                 </div>
                                             </div>
                                         </div>
@@ -284,10 +252,10 @@
                                         <a href="#">
                                             <img class="avatar border-gray" src="{{ asset('sora/assets/img') }}/faces/face-3.jpg"
                                                 alt="...">
-                                            <h5 class="title">نیما شاهی</h5>
+                                            <h5 class="title">{{ $user->first_name }} {{ $user->last_name }}</h5>
                                         </a>
                                         <p class="description">
-                                            nima25
+                                            ...
                                         </p>
                                     </div>
                                     <p class="description text-center">

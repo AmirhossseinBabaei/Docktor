@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Appointment;
 use App\Services\Dashboard\IndexDashboardService;
 use Illuminate\Http\Request;
 
@@ -22,5 +23,16 @@ class DashboardController extends Controller
         ];
 
         return view('sora.examples.dashboard', compact('serviceData'));
+    }
+
+    public function getFiveLastAppoiments()
+    {
+        $data = Appointment::with(['patient', 'doctor'])
+            ->orderBy('id', 'desc')
+            ->limit(5)
+            ->get();
+
+        return response()
+            ->json(['data' => $data], 200);
     }
 }

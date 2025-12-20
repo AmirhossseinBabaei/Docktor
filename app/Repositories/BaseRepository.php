@@ -18,4 +18,14 @@ abstract class BaseRepository
     {
         return app($this->setModel);
     }
+
+    public function insert(array $data)
+    {
+        return $this->model()->create($data);
+    }
+
+    public function update(int $id, array $data)
+    {
+        return $this->model()->where('id', $id)->update($data);
+    }
 }
