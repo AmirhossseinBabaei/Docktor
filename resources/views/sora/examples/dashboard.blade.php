@@ -13,426 +13,332 @@
 
  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.  -->
 {{--{{ dd($serviceData['data']) }}--}}
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('sora/assets/img') }}/apple-icon.png">
     <link rel="icon" type="image/png" href="{{ asset('sora/assets/img') }}/favicon.ico">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>داشبورد سورا</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
-        name='viewport' />
+          name='viewport'/>
     <!--     Fonts and icons     -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-    <link href="{{ asset('sora/assets/css') }}/all.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet"/>
+    <link href="{{ asset('sora/assets/css') }}/all.css" rel="stylesheet"/>
     <!-- CSS Files -->
-    <link href="{{ asset('sora/assets/css') }}/bootstrap.min.css" rel="stylesheet" />
-    <link href="{{ asset('sora/assets/css') }}/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
+    <link href="{{ asset('sora/assets/css') }}/bootstrap.min.css" rel="stylesheet"/>
+    <link href="{{ asset('sora/assets/css') }}/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet"/>
     <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="{{ asset('sora/assets/css') }}/demo.css" rel="stylesheet" />
-    <link href="{{ asset('sora/assets/css') }}/fonts.css" rel="stylesheet" />
+    <link href="{{ asset('sora/assets/css') }}/demo.css" rel="stylesheet"/>
+    <link href="{{ asset('sora/assets/css') }}/fonts.css" rel="stylesheet"/>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="sidebar" data-image="{{ asset('sora/assets/img') }}/sidebar-5.jpg">
-            <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+<div class="wrapper">
+    <div class="sidebar" data-image="{{ asset('sora/assets/img') }}/sidebar-5.jpg">
+        <!--
+    Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
-        Tip 2: you can also add an image using data-image tag
-    -->
-            <div class="sidebar-wrapper">
-                <div class="logo">
-                    <a href="#" class="simple-text">
-                       سیستم مدیریت مطب سورا
+    Tip 2: you can also add an image using data-image tag
+-->
+        <div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="#" class="simple-text">
+                    سیستم مدیریت مطب سورا
+                </a>
+            </div>
+            <ul class="nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="dashboard.html">
+                        <i class="nc-icon nc-chart-pie-35"></i>
+                        <p>داشبورد</p>
                     </a>
-                </div>
-                <ul class="nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="dashboard.html">
-                            <i class="nc-icon nc-chart-pie-35"></i>
-                            <p>داشبورد</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="./user.html">
-                            <i class="nc-icon nc-circle-09"></i>
-                            <p>پروفایل</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="./table.html">
-                            <i class="nc-icon nc-notes"></i>
-                            <p>آمار</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="./form.html">
-                            <i class="nc-icon nc-credit-card"></i>
-                            <p>پزشکان</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="./typography.html">
-                            <i class="nc-icon nc-paper-2"></i>
-                            <p>بیماران</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="./icons.html">
-                            <i class="nc-icon nc-atom"></i>
-                            <p>دارو ها</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="./maps.html">
-                            <i class="nc-icon nc-pin-3"></i>
-                            <p>تنظیمات</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="./notifications.html">
-                            <i class="nc-icon nc-bell-55"></i>
-                            <p>سرویس ها</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="./notifications.html">
-                            <i class="nc-icon nc-album-2"></i>
-                            <p>ویزیت ها</p>
-                        </a>
-                    </li>
-                    <li class="nav-item active active-pro">
-                        <a class="nav-link active" href="{{ route('logout') }}">
-                            <i class="fa fa-sign-out-alt"></i>
-                            <p>خروج از سورا</p>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="main-panel">
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg " color-on-scroll="500">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#pablo"> داشبورد </a>
-                    <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                        aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-bar burger-lines"></span>
-                        <span class="navbar-toggler-bar burger-lines"></span>
-                        <span class="navbar-toggler-bar burger-lines"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                        <ul class="nav navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link" data-toggle="dropdown">
-                                    <i class="nc-icon nc-palette"></i>
-                                    <span class="d-lg-none">داشبورد</span>
-                                </a>
-                            </li>
-                            <li class="dropdown nav-item">
-                                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                                    <i class="nc-icon nc-planet"></i>
-                                    <span class="notification">5</span>
-                                    <span class="d-lg-none">اعلان</span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">اعلان 1</a>
-                                    <a class="dropdown-item" href="#">اعلان 2</a>
-                                    <a class="dropdown-item" href="#">اعلان 3</a>
-                                    <a class="dropdown-item" href="#">اعلان 4</a>
-                                    <a class="dropdown-item" href="#">اعلان دیگر</a>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="nc-icon nc-zoom-split"></i>
-                                    <span class="d-lg-block">&nbsp;جستجو</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#pablo">
-                                    <span class="no-icon">حساب</span>
-                                </a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="http://example.com"
-                                    id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                    <span class="no-icon">لیست کشویی</span>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">آیتم اول</a>
-                                    <a class="dropdown-item" href="#">آیتم دوم</a>
-                                    <a class="dropdown-item" href="#">آیتم سوم</a>
-                                    <a class="dropdown-item" href="#">آیتم چهارم</a>
-                                    <div class="divider"></div>
-                                    <a class="dropdown-item" href="#">آیتم پنجم</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('logout')  }}">
-                                    <span class="no-icon">خروج</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <!-- End Navbar -->
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card ">
-                                <div class="card-header ">
-                                    <h4 class="card-title">آمار ویزیت ها</h4>
-                                    <div class="d-flex justify-content-between">
-                                        <p class="card-category">آخرین عملکرد کمپین</p>
-                                        <p class="card-category">تعداد کل نوبت ها: {{ $serviceData['data']['pieChartData']['any'] }}</p>
-                                    </div>
-                                </div>
-                                <div class="card-body ">
-                                    <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
-                                    <div class="legend">
-                                        <i class="fa fa-circle text-info"></i> ویزیت شده
-                                        <i class="fa fa-circle text-danger"></i> منتظر
-                                        <i class="fa fa-circle text-warning"></i> لغو شده
-                                    </div>
-                                    <hr>
-                                    <div class="stats">
-                                        <i class="fa fa-clock-o"></i>وضعیت کمپین هم اکنون
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card ">
-                                <div class="card-header ">
-                                    <h4 class="card-title">آمار ویزیت ها</h4>
-                                    <p class="card-category">عملکرد 24 ساعته</p>
-                                </div>
-                                <div class="card-body ">
-                                    <div id="chartHours" class="ct-chart"></div>
-                                </div>
-                                <div class="card-footer ">
-                                    <div class="legend">
-                                        <i class="fa fa-circle text-info"></i> ویزیت شده
-                                        <i class="fa fa-circle text-danger"></i> منتظر
-                                        <i class="fa fa-circle text-warning"></i>لغو شده
-                                    </div>
-                                    <hr>
-                                    <div class="stats">
-                                        <i class="fa fa-history"></i> 3 دقیقه پیش آپدیت شد
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card ">
-                                <div class="card-header ">
-                                    <h4 class="card-title">پر بازدید ترین ماه ها</h4>
-                                    <p class="card-category">کل ماه های سال</p>
-                                </div>
-                                <div class="card-body ">
-                                    <div id="chartActivity" class="ct-chart"></div>
-                                </div>
-                                <div class="card-footer ">
-                                    <div class="legend">
-                                        <i class="fa fa-circle text-info"></i> نیمه اول
-                                        <i class="fa fa-circle text-danger"></i> نیمه دوم
-                                    </div>
-                                    <hr>
-                                    <div class="stats">
-                                        <i class="fa fa-check"></i> اطلاعات داده تایید شده است
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card  card-tasks">
-                                <div class="card-header ">
-                                    <h4 class="card-title">نسخه ها</h4>
-                                    <p class="card-category">آمار ریل تایم</p>
-                                </div>
-                                <div class="card-body ">
-                                    <div class="table-full-width">
-                                        <table class="table">
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <label class="form-check-label">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    value="">
-                                                                <span class="form-check-sign"></span>
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>حسن رضایی
-                                                    </td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" title="Edit Task"
-                                                            class="btn btn-info btn-simple btn-link">
-                                                            <button type="button" rel="tooltip"
-                                                                    class="btn btn-warning">
-                                                                وضعیت: منتظر نوبت
-                                                            </button>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <label class="form-check-label">
-                                                                <input class="form-check-input" type="checkbox" value=""
-                                                                    checked>
-                                                                <span class="form-check-sign"></span>
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>مصطفی محمدی
-                                                    </td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" title="Edit Task"
-                                                            class="btn btn-info btn-simple btn-link">
-                                                            <button type="button" rel="tooltip"
-                                                                    class="btn btn-warning">
-                                                                وضعیت: منتظر نوبت
-                                                            </button>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <label class="form-check-label">
-                                                                <input class="form-check-input" type="checkbox" value=""
-                                                                    checked>
-                                                                <span class="form-check-sign"></span>
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        جعفر رضایی
-                                                    </td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" title="Edit Task"
-                                                            class="btn btn-info btn-simple btn-link">
-                                                            <button type="button" rel="tooltip"
-                                                                    class="btn btn-warning">
-                                                                وضعیت: منتظر نوبت
-                                                            </button>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <label class="form-check-label">
-                                                                <input class="form-check-input" type="checkbox" checked>
-                                                                <span class="form-check-sign"></span>
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>نوشابه عین اللهی
-                                                    </td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" title="Edit Task"
-                                                            class="btn btn-info btn-simple btn-link">
-                                                            <button type="button" rel="tooltip"
-                                                                    class="btn btn-warning">
-                                                                وضعیت: منتظر نوبت
-                                                            </button>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <label class="form-check-label">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    value="">
-                                                                <span class="form-check-sign"></span>
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td>رضا محمدی</td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" title="Edit Task"
-                                                            class="btn btn-info btn-simple btn-link">
-                                                            <button type="button" rel="tooltip"
-                                                                    class="btn btn-warning">
-                                                                وضعیت: منتظر نوبت
-                                                            </button>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check">
-
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="card-footer ">
-                                    <hr>
-                                    <div class="stats">
-                                        <i class="now-ui-icons loader_refresh spin"></i> 3 دقیقه پیش آپدیت شد
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <footer class="footer">
-                <div class="container-fluid">
-                    <nav>
-                        <ul class="footer-menu">
-                            <li>
-                                <a href="#">
-                                    خانه
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    شرکت
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    نمونه کار
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    بلاگ
-                                </a>
-                            </li>
-                        </ul>
-                        <p class="copyright text-center">
-                            ©
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script>
-                            <a href="http://persian-theme.com/">پرشین تم</a>, ساخته شده با عشق برای یک وب بهتر
-                        </p>
-                    </nav>
-                </div>
-            </footer>
+                </li>
+                <li>
+                    <a class="nav-link" href="./user.html">
+                        <i class="nc-icon nc-circle-09"></i>
+                        <p>پروفایل</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="./table.html">
+                        <i class="nc-icon nc-notes"></i>
+                        <p>آمار</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="./form.html">
+                        <i class="nc-icon nc-credit-card"></i>
+                        <p>پزشکان</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="./typography.html">
+                        <i class="nc-icon nc-paper-2"></i>
+                        <p>بیماران</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="./icons.html">
+                        <i class="nc-icon nc-atom"></i>
+                        <p>دارو ها</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="./maps.html">
+                        <i class="nc-icon nc-pin-3"></i>
+                        <p>تنظیمات</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="./notifications.html">
+                        <i class="nc-icon nc-bell-55"></i>
+                        <p>سرویس ها</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="./notifications.html">
+                        <i class="nc-icon nc-album-2"></i>
+                        <p>ویزیت ها</p>
+                    </a>
+                </li>
+                <li class="nav-item active active-pro">
+                    <a class="nav-link active" href="{{ route('logout') }}">
+                        <i class="fa fa-sign-out-alt"></i>
+                        <p>خروج از سورا</p>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
-    <!--   -->
+    <div class="main-panel">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#pablo"> داشبورد </a>
+                <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                        aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar burger-lines"></span>
+                    <span class="navbar-toggler-bar burger-lines"></span>
+                    <span class="navbar-toggler-bar burger-lines"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="dropdown">
+                                <i class="nc-icon nc-palette"></i>
+                                <span class="d-lg-none">داشبورد</span>
+                            </a>
+                        </li>
+                        <li class="dropdown nav-item">
+                            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                <i class="nc-icon nc-planet"></i>
+                                <span class="notification">5</span>
+                                <span class="d-lg-none">اعلان</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <a class="dropdown-item" href="#">اعلان 1</a>
+                                <a class="dropdown-item" href="#">اعلان 2</a>
+                                <a class="dropdown-item" href="#">اعلان 3</a>
+                                <a class="dropdown-item" href="#">اعلان 4</a>
+                                <a class="dropdown-item" href="#">اعلان دیگر</a>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nc-icon nc-zoom-split"></i>
+                                <span class="d-lg-block">&nbsp;جستجو</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#pablo">
+                                <span class="no-icon">حساب</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="http://example.com"
+                               id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">
+                                <span class="no-icon">لیست کشویی</span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">آیتم اول</a>
+                                <a class="dropdown-item" href="#">آیتم دوم</a>
+                                <a class="dropdown-item" href="#">آیتم سوم</a>
+                                <a class="dropdown-item" href="#">آیتم چهارم</a>
+                                <div class="divider"></div>
+                                <a class="dropdown-item" href="#">آیتم پنجم</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('logout')  }}">
+                                <span class="no-icon">خروج</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card ">
+                            <div class="card-header ">
+                                <h4 class="card-title">آمار ویزیت ها</h4>
+                                <div class="d-flex justify-content-between">
+                                    <p class="card-category">آخرین عملکرد کمپین</p>
+                                    <p class="card-category">تعداد کل نوبت
+                                        ها: {{ $serviceData['data']['pieChartData']['any'] }}</p>
+                                </div>
+                            </div>
+                            <div class="card-body ">
+                                <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
+                                <div class="legend">
+                                    <i class="fa fa-circle text-info"></i> ویزیت شده
+                                    <i class="fa fa-circle text-danger"></i> منتظر
+                                    <i class="fa fa-circle text-warning"></i> لغو شده
+                                </div>
+                                <hr>
+                                <div class="stats">
+                                    <i class="fa fa-clock-o"></i>وضعیت کمپین هم اکنون
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card ">
+                            <div class="card-header ">
+                                <h4 class="card-title">آمار ویزیت ها</h4>
+                                <p class="card-category">عملکرد 24 ساعته</p>
+                            </div>
+                            <div class="card-body ">
+                                <div id="chartHours" class="ct-chart"></div>
+                            </div>
+                            <div class="card-footer ">
+                                <div class="legend">
+                                    <i class="fa fa-circle text-info"></i> ویزیت شده
+                                    <i class="fa fa-circle text-danger"></i> منتظر
+                                    <i class="fa fa-circle text-warning"></i>لغو شده
+                                </div>
+                                <hr>
+                                <div class="stats">
+                                    <i class="fa fa-history"></i> 3 دقیقه پیش آپدیت شد
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card ">
+                            <div class="card-header ">
+                                <h4 class="card-title">پر بازدید ترین ماه ها</h4>
+                                <p class="card-category">کل ماه های سال</p>
+                            </div>
+                            <div class="card-body ">
+                                <div id="chartActivity" class="ct-chart"></div>
+                            </div>
+                            <div class="card-footer ">
+                                <hr>
+                                <div class="stats">
+                                    <i class="fa fa-check"></i> اطلاعات داده تایید شده است
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card  card-tasks">
+                            <div class="card-header ">
+                                <h4 class="card-title">نسخه ها</h4>
+                                <p class="card-category">آمار ریل تایم</p>
+                            </div>
+                            <div class="card-body ">
+                                <div class="table-full-width">
+                                    <table class="table" id="mySocket">
+                                        <tbody>
+                                        {{--                                            --}}
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox"
+                                                               value="">
+                                                        <span class="form-check-sign"></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>حسن رضایی
+                                            </td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" title="Edit Task"
+                                                        class="btn btn-info btn-simple btn-link">
+                                                    <button type="button" rel="tooltip"
+                                                            class="btn btn-warning">
+                                                        وضعیت: منتظر نوبت
+                                                    </button>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        {{--                                            --}}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="card-footer ">
+                                <hr>
+                                <div class="stats">
+                                    <i class="now-ui-icons loader_refresh spin"></i> 3 دقیقه پیش آپدیت شد
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <nav>
+                    <ul class="footer-menu">
+                        <li>
+                            <a href="#">
+                                خانه
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                شرکت
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                نمونه کار
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                بلاگ
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-center">
+                        ©
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>
+                        <a href="http://persian-theme.com/">پرشین تم</a>, ساخته شده با عشق برای یک وب بهتر
+                    </p>
+                </nav>
+            </div>
+        </footer>
+    </div>
+</div>
+<!--   -->
 </body>
 <!--   Core JS Files   -->
 <script src="{{ asset('sora/assets/js') }}/core/jquery.3.2.1.min.js" type="text/javascript"></script>
@@ -449,7 +355,7 @@
 <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
 <script src="{{ asset('sora/assets/js') }}/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script>
 <script>
-    $().ready(function() {
+    $().ready(function () {
         $sidebar = $('.sidebar');
         $sidebar_img_container = $sidebar.find('.sidebar-background');
 
@@ -468,7 +374,7 @@
 
         }
 
-        $('.fixed-plugin a').click(function(event) {
+        $('.fixed-plugin a').click(function (event) {
             // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
             if ($(this).hasClass('switch-trigger')) {
                 if (event.stopPropagation) {
@@ -479,7 +385,7 @@
             }
         });
 
-        $('.fixed-plugin .background-color span').click(function() {
+        $('.fixed-plugin .background-color span').click(function () {
             $(this).siblings().removeClass('active');
             $(this).addClass('active');
 
@@ -498,7 +404,7 @@
             }
         });
 
-        $('.fixed-plugin .img-holder').click(function() {
+        $('.fixed-plugin .img-holder').click(function () {
             $full_page_background = $('.full-page-background');
 
             $(this).parent('li').siblings().removeClass('active');
@@ -508,7 +414,7 @@
             var new_image = $(this).find("img").attr('src');
 
             if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
-                $sidebar_img_container.fadeOut('fast', function() {
+                $sidebar_img_container.fadeOut('fast', function () {
                     $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
                     $sidebar_img_container.fadeIn('fast');
                 });
@@ -517,7 +423,7 @@
             if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
                 var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
 
-                $full_page_background.fadeOut('fast', function() {
+                $full_page_background.fadeOut('fast', function () {
                     $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
                     $full_page_background.fadeIn('fast');
                 });
@@ -536,7 +442,7 @@
             }
         });
 
-        $('.switch input').on("switchChange.bootstrapSwitch", function() {
+        $('.switch input').on("switchChange.bootstrapSwitch", function () {
 
             $full_page_background = $('.full-page-background');
 
@@ -573,8 +479,8 @@
     type = ['primary', 'info', 'success', 'warning', 'danger'];
 
     demo = {
-        initPickColor: function() {
-            $('.pick-class-label').click(function() {
+        initPickColor: function () {
+            $('.pick-class-label').click(function () {
                 var new_class = $(this).attr('new-class');
                 var old_class = $('#display-buttons').attr('data-class');
                 var display_div = $('#display-buttons');
@@ -587,7 +493,7 @@
             });
         },
 
-        initDocumentationCharts: function() {
+        initDocumentationCharts: function () {
             /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
 
             dataDailySalesChart = {
@@ -617,11 +523,11 @@
             // lbd.startAnimationForLineChart(dailySalesChart);
         },
 
-        initDashboardPageCharts: function() {
+        initDashboardPageCharts: function () {
 
             var dataPreferences = {
                 series: [
-                    [5, 10, 15,10]
+                    [5, 10, 15, 10]
                 ]
             };
 
@@ -691,7 +597,7 @@
             var responsiveSales = [
                 ['screen and (max-width: 640px)', {
                     axisX: {
-                        labelInterpolationFnc: function(value) {
+                        labelInterpolationFnc: function (value) {
                             return value[0];
                         }
                     }
@@ -720,13 +626,13 @@
             ];
 
             let data = {
-                labels: ['فروردین', 'اردیبهشت' ,'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'],
+                labels: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'],
                 series: [seriesData]
             };
 
             var options = {
                 seriesBarDistance: 100,
-                axisX: { showGrid: false },
+                axisX: {showGrid: false},
                 axisY: {
                     onlyInteger: true,
                     offset: 10,
@@ -824,7 +730,7 @@
 
         },
 
-        initGoogleMaps: function() {
+        initGoogleMaps: function () {
             var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
             var mapOptions = {
                 zoom: 13,
@@ -959,7 +865,7 @@
             marker.setMap(map);
         },
 
-        showNotification: function(from, align) {
+        showNotification: function (from, align) {
             color = Math.floor((Math.random() * 4) + 1);
 
             $.notify({
@@ -977,7 +883,6 @@
         }
 
 
-
     }
 </script>
 <script type="text/javascript">
@@ -990,5 +895,48 @@
     });
 </script>
 
+<script>
+    fetch('/get-five-appoiments-last', {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+        .then(res => res.json())
+        .then(data => {
+            console.log('داده دریافتی:', data);
+
+            const tableBody = document.querySelector('#mySocket');
+            tableBody.innerHTML = ''; // پاک کردن داده‌های قبلی
+
+            // اگر data آرایه نیست، باید مسیر درست رو پیدا کنی
+            const items = Object.values(data);
+            items.forEach(item => {
+            for (let i = 0; i < 5; i++) {
+                const row = document.createElement('tr');
+            console.log(item[i]);
+                row.innerHTML += `
+              <td>${item[i].patient.first_name} ${item[i].patient.last_name}
+                                            </td>
+
+              <td>${item[i].doctor.first_name} ${item[i].doctor.last_name}
+                                            </td>
+                <td>
+              <td>${item[i].date} ${item[i].start_time}
+                                            </td></td>
+                                            <td class="text-right">
+
+                                                    <button type="button" rel="tooltip"
+                                                            class="btn btn-${item[i].status[1]} text-black btn-sm">
+                                                        وضعیت: ${item[i].status[0]}
+                                                    </button>
+                                            </td>
+        `;
+                tableBody.appendChild(row);
+            }
+            });
+        })
+        .catch(err => console.error('خطا در دریافت داده‌ها:', err));
+</script>
 </html>
 

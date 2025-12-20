@@ -48,4 +48,12 @@ class AppointmentRepository extends BaseRepository
             ->whereMonth('date', $month)
             ->count();
     }
+
+    public function getLastFiveAppoiments()
+    {
+        return $this->model()
+            ->orderBy('id', 'desc')
+            ->limit(5)
+            ->get();
+    }
 }

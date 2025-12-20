@@ -15,6 +15,16 @@ Route::get('/book-appointment', function () {
 
 //Route::view('/sora', 'sora')->name('sora.demo');
 
+Route::get('get-five-appoiments-last', function () {
+    return response()->json(['data' => \App\Models\Appointment::with(['patient', 'doctor'])->orderBy('id', 'desc')
+        ->limit(5)
+        ->get()], 200);
+});
+
+Route::get('/test-socket', function () {
+    return event(new \App\Events\Dashboard\GetLastFiveAppoimentsEvent());
+});
+
 Route::get('/loginForm', [\App\Http\Controllers\Auth\AuthController::class, 'showLoginForm'])->name('login');
 
 Route::post('login', [\App\Http\Controllers\Auth\AuthController::class, 'login'])->name('loginMethod');
@@ -25,7 +35,7 @@ Route::get('google-login', [\App\Http\Controllers\Auth\AuthController::class, 'g
 
 Route::get('/logout', [\App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('logout');
 
-Route::get('/hash', function (){
+Route::get('/hash', function () {
     return \Illuminate\Support\Facades\Hash::make('Laravel');
 });
 
