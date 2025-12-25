@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Services\Dashboard;
+namespace App\Services\Dashboard\Methods\Index;
 
-use App\Services\Dashboard\SubServices\AreaChartAppointmentDataService;
-use App\Services\Dashboard\SubServices\MonthChartAppointmentsCountService;
-use App\Services\Dashboard\SubServices\PieChartAppointmentsDataService;
+use App\Services\Dashboard\Methods\Index\SubServices\AreaChartAppointmentDataService;
+use App\Services\Dashboard\Methods\Index\SubServices\MonthChartAppointmentsCountService;
+use App\Services\Dashboard\Methods\Index\SubServices\PieChartAppointmentsDataService;
 
 class IndexDashboardService
 {

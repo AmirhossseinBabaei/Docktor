@@ -34,9 +34,9 @@ class AppointmentRepository extends BaseRepository
     {
         return $this->model()
             ->whereDate('date', Carbon::now()
-            ->format('Y-m-d'))
+                ->format('Y-m-d'))
             ->where('start_time', '<=', $startTime)
-            ->where('end_time', '>=',$finishTime)
+            ->where('end_time', '>=', $finishTime)
             ->count();
     }
 
@@ -44,7 +44,7 @@ class AppointmentRepository extends BaseRepository
     {
         return $this->model()
             ->whereYear('date', Carbon::now()
-            ->format('Y'))
+                ->format('Y'))
             ->whereMonth('date', $month)
             ->count();
     }
@@ -55,5 +55,15 @@ class AppointmentRepository extends BaseRepository
             ->orderBy('id', 'desc')
             ->limit(5)
             ->get();
+    }
+
+    public function paginate(int $count)
+    {
+        return $this->model()->orderBy('id', 'desc')->with(['patient', 'doctor'])->paginate($count);
+    }
+
+    public function appointmentModel()
+    {
+        return $this->model();
     }
 }

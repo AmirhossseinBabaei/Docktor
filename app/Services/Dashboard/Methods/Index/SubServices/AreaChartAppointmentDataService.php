@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Dashboard\SubServices;
+namespace App\Services\Dashboard\Methods\Index\SubServices;
 
 use App\Repositories\AppointmentRepository;
 

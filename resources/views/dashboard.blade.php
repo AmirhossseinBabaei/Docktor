@@ -182,7 +182,7 @@
 
         <!-- Main Grid -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <!-- Today's Appointments -->
+            <!-- Today's appointments -->
             <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg border border-gray-50">
                 <div class="flex items-center justify-between mb-4">
                     <div>

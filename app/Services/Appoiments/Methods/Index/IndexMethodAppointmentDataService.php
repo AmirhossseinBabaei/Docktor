@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Services\Dashboard\SubServices;
+namespace App\Services\Appoiments\Methods\Index;
 
 use App\Repositories\AppointmentRepository;
 
-class GetLastFiveAppoimentsDataService
+class IndexMethodAppointmentDataService
 {
     public AppointmentRepository $repository;
 
@@ -16,8 +16,7 @@ class GetLastFiveAppoimentsDataService
     public function getData(): array
     {
         return [
-            $this->repository->getLastFiveAppoiments()
+            'appointments' => $this->repository->paginate(10)
         ];
     }
-
 }

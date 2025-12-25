@@ -65,7 +65,7 @@
                 <li>
                     <a class="nav-link" href="./table.html">
                         <i class="nc-icon nc-notes"></i>
-                        <p>آمار</p>
+                        <p>نوبت ها</p>
                     </a>
                 </li>
                 <li>
@@ -104,6 +104,7 @@
                         <p>ویزیت ها</p>
                     </a>
                 </li>
+
                 <li class="nav-item active active-pro">
                     <a class="nav-link active" href="{{ route('logout') }}">
                         <i class="fa fa-sign-out-alt"></i>

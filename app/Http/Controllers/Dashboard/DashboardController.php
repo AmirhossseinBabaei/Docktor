@@ -4,8 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\Appointment;
-use App\Services\Dashboard\IndexDashboardService;
-use Illuminate\Http\Request;
+use App\Services\Dashboard\Methods\Index\IndexDashboardService;
 
 class DashboardController extends Controller
 {
